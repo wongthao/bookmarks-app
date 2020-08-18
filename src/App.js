@@ -6,6 +6,7 @@ import BookmarksContext from './BookmarksContext';
 import Nav from './Nav/Nav';
 import config from './config';
 import './App.css';
+import Rating from './Rating/Rating';
 
 const bookmarks = [
   // {
@@ -87,6 +88,7 @@ class App extends Component {
     return (
       <main className='App'>
         <h1>Bookmarks!</h1>
+        <Rating /> 
         <BookmarksContext.Provider value={contextValue}>
           <Nav />
           <div className='content' aria-live='polite'>
@@ -97,8 +99,12 @@ class App extends Component {
             <Route
               exact
               path='/'
-              component={BookmarkList}
+              component={BookmarkList }
+              
             />
+            {/* <BookmarkList bookmarks={[1,2,3,4,5]}/>
+            <Rating value={-5}/> */}
+
           </div>
         </BookmarksContext.Provider>
       </main>
